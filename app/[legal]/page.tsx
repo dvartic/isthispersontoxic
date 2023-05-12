@@ -5,7 +5,7 @@ export async function generateStaticParams() {
     const paginasLegales = getFiles();
     const paths = paginasLegales.map((element) => {
         return {
-            slug: element.replace(/\.mdx/, ""),
+            legal: element.replace(/\.mdx/, ""),
         };
     });
     return paths;

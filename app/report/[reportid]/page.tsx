@@ -19,11 +19,7 @@ async function getResultBySlug(slug: string) {
 
 export async function generateStaticParams() {
     // Get all slugs
-    const reportWithSlug = await prisma.result.findMany({
-        select: {
-            slug: true,
-        },
-    });
+    const reportWithSlug = await prisma.result.findMany({});
 
     // Return slugs
     return reportWithSlug.map((report) => {
