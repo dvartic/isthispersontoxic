@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project that provides reports on toxicity of a comment
 
-## Getting Started
+[https://www.isthispersontoxic.com/](https://www.isthispersontoxic.com/)
 
-First, run the development server:
+This project is a simple application that generates reports for a comment using [Perspective API](https://perspectiveapi.com/) and allows you to share them.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## What technologies did I use and why?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   [React.js](https://reactjs.org/): React is very flexible, has great support and is one of the prime libraries used to build user interfaces.
+-   [Next.js](https://nextjs.org/): Next is a serverless backend framework that enables many rendering options. In this website, static pages are generated ahead of time, while reports are generated server side per quest (SSG).
+-   [ChakraUI](https://chakra-ui.com/): Chakra is one of the main component libraries for React and allows fast development.
+-   [Framer Motion](https://www.framer.com/motion/): an animation library for React.
+-   [Prisma](https://www.prisma.io/): Node.js and TypeScript ORM.
+-   [MongoDB](https://www.mongodb.com/): fast scalable no-SQL database adequate for data that lacks complex relations.
+-   [Perspective API](https://perspectiveapi.com/): Google's API that uses ML to identify toxicity.
+-   [TypeScript](https://www.typescriptlang.org/): provides static typing to JavaScript.
+-   [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote): efficiently loads MarkdownX content through `generateStaticParams()` in Next.js.
+-   [MarkdownX](https://mdxjs.com/): allows injecting of JSX in Markdown files.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Why did I make this project?
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+It is fun to be able to analyze comments and get a report with, optionally, a name, and being able to share it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## See also:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   Perspective API: https://perspectiveapi.com/

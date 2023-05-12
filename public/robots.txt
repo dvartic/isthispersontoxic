@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://edepo-web.vercel.app
+
+# Sitemaps
+Sitemap: https://edepo-web.vercel.app/sitemap.xml
