@@ -17,6 +17,7 @@ import { RadLogo } from "../svgs/rad-logo";
 import { motion, Variants } from "framer-motion";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 type FormInput = {
     comment: string;
@@ -35,6 +36,22 @@ export function Hero() {
         handleSubmit,
         formState: { errors, isSubmitting },
     } = useForm<FormInput>();
+
+    // Delay isSubmitting variable a few seconds to improve user experience
+    const [isSubmittingDelayed, setIsSubmittingDelayed] = useState(false);
+
+    console.log(isSubmittingDelayed);
+
+    const didMount = useRef(false);
+    useEffect(() => {
+        if (didMount.current) {
+            if (isSubmitting) setIsSubmittingDelayed(true);
+            if (!isSubmitting) {
+                const timeoutId = setTimeout(() => setIsSubmittingDelayed(false), 3000);
+                return () => clearTimeout(timeoutId);
+            }
+        } else didMount.current = true;
+    }, [isSubmitting]);
 
     const onSubmit: SubmitHandler<FormInput> = async (data) => {
         const res = await fetch("/api/comment-analyzer", {
@@ -159,7 +176,7 @@ export function Hero() {
                                 w="100%"
                                 colorScheme="green"
                                 type="submit"
-                                isLoading={isSubmitting}
+                                isLoading={isSubmittingDelayed}
                                 loadingText="Loading"
                             >
                                 Run
