@@ -21,7 +21,7 @@ export async function POST(request: Request) {
             },
         });
         // Revalidate route
-        const path = `/result/${slug}`;
+        const path = `/report/${slug}`;
         revalidatePath(path);
         return NextResponse.json(updatedResult);
     } catch (err: any) {
