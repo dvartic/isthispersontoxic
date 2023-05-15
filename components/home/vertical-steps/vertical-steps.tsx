@@ -124,6 +124,7 @@ export function VerticalSteps() {
                     src={stepsBg}
                     alt="Steps background"
                     fill={true}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     style={{ zIndex: 0, objectFit: "contain" }}
                     placeholder="blur"
                 />
@@ -133,6 +134,7 @@ export function VerticalSteps() {
                         src={activeImage()}
                         alt="Steps Image"
                         fill={true}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         style={{ zIndex: 1, objectFit: "contain" }}
                         placeholder="blur"
                         ref={scope}

@@ -110,7 +110,13 @@ export function FeaturesMain() {
                     viewport={{ amount: isHeightSmallerThan750 ? 0.1 : 0.2 }}
                 >
                     <Center flex="1" shadow="lg" minH="26rem" maxW={{ lg: "xl" }} position="relative">
-                        <NextImage src={trashImage} fill={true} alt="A pile of trash" style={{ objectFit: "cover" }} />
+                        <NextImage
+                            src={trashImage}
+                            fill={true}
+                            sizes="(max-width: 768px) 100vw, 45vw"
+                            alt="A pile of trash"
+                            style={{ objectFit: "cover" }}
+                        />
                     </Center>
                     <Box maxW={{ lg: "lg" }}>
                         <Heading size="2xl" mt="10" fontWeight="extrabold" letterSpacing="tight" lineHeight="normal">
