@@ -10,6 +10,7 @@ import {
     InputGroup,
     InputLeftElement,
     Link,
+    Text,
     Textarea,
     useColorModeValue,
     useMediaQuery,
@@ -106,7 +107,7 @@ export function ContactForm() {
             maxWidth="700px"
             ml="auto"
             mr="auto"
-            mt={20}
+            mt={{ base: 10, sm: 14, md: 20 }}
             mb={20}
         >
             <VStack spacing={{ base: 2, sm: 5 }}>
@@ -220,8 +221,17 @@ export function ContactForm() {
                     value="accept"
                     isInvalid={errors.checkbox ? true : false}
                 >
-                    By checking this box, you accept our{" "}
-                    <Link as={NextLink} href={"/privacy"} color={linkColor} _hover={hover()}>
+                    <Text fontSize={{ base: "sm", sm: "md" }} as="span">
+                        By checking this box, you accept our{" "}
+                    </Text>
+
+                    <Link
+                        fontSize={{ base: "sm", sm: "md" }}
+                        as={NextLink}
+                        href={"/privacy"}
+                        color={linkColor}
+                        _hover={hover()}
+                    >
                         privacy policy.
                     </Link>
                 </Checkbox>

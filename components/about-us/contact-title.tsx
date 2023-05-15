@@ -13,8 +13,8 @@ export function ContactTitle() {
             mx="auto"
             align="center"
             textAlign="center"
-            spacing={6}
-            mt={24}
+            spacing={{ base: 4, sm: 6 }}
+            mt={{ base: 10, sm: 14, md: 20 }}
         >
             <Heading fontSize={{ base: "2xl", sm: "3xl", md: "3xl", lg: "4xl" }}>Contact us</Heading>
             <Text fontSize={{ base: "xs", sm: "sm", md: "sm", lg: "md" }}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import { Step } from "./step";
 import { StepContent } from "./step-content";
 import { Steps } from "./steps";
@@ -21,21 +21,36 @@ export function VerticalSteps() {
         return [step1, step2, step3, step4][activeStep];
     }
 
+    // Media query for viewport scroll detection. Disable image animation on small height screens.
+    const [isHeightSmallerThan750] = useMediaQuery("(max-height: 750px)");
+
+    // Animation variants
+    function getVariantsBasedOnBoolean(bool: boolean) {
+        if (bool) {
+            return {
+                offscreen: { x: 0, opacity: 1 },
+                onscreen: { x: 0, opacity: 1 },
+            };
+        }
+        return {
+            offscreen: {
+                x: 30,
+                opacity: 0,
+                transition: {
+                    duration: 0.5,
+                },
+            },
+            onscreen: {
+                x: 0,
+                opacity: 1,
+                transition: {
+                    duration: 0.5,
+                },
+            },
+        };
+    }
     const scrollAnimVariants: Variants = {
-        offscreen: {
-            x: 30,
-            opacity: 0,
-            transition: {
-                duration: 0.5,
-            },
-        },
-        onscreen: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.5,
-            },
-        },
+        ...getVariantsBasedOnBoolean(isHeightSmallerThan750),
     };
 
     // Manual animation for steps image
@@ -50,7 +65,12 @@ export function VerticalSteps() {
     }, [activeStep]);
 
     return (
-        <Stack w="100%" spacing={4} direction={{ base: "column", sm: "column", md: "row" }} align="center">
+        <Stack
+            w="100%"
+            spacing={{ base: 1, sm: 4 }}
+            direction={{ base: "column", sm: "column", md: "row" }}
+            align="center"
+        >
             <Box py={{ base: "5", sm: "5", md: "10" }} px={{ base: "6", md: "8" }} minH="400px">
                 <Steps activeStep={activeStep}>
                     <Step title="Enter comment" setActiveStep={setActiveStep}>
@@ -91,14 +111,14 @@ export function VerticalSteps() {
             </Box>
             {/* Image that changes based on activeStep */}
             <Box
-                w="50%"
-                h={{ base: "250px", sm: "350px", md: "400px", lg: "550px" }}
+                w={{ base: "100%", sm: "100%", md: "50%" }}
+                h={{ base: "400px", sm: "500px", md: "400px", lg: "550px" }}
                 position="relative"
                 as={motion.div}
                 variants={scrollAnimVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ amount: 0.7 }}
+                viewport={{ amount: 0.75 }}
             >
                 <NextImage
                     src={stepsBg}

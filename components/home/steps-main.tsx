@@ -26,7 +26,7 @@ export function StepsMain() {
     };
 
     return (
-        <Box w="100%" bg={bg} py={{ base: 24, sm: 32 }} position="relative" zIndex={10}>
+        <Box w="100%" bg={bg} py={{ base: 16, sm: 32 }} position="relative" zIndex={10}>
             <VStack
                 w={stdWidths.width}
                 maxW={stdWidths.maxWidth}

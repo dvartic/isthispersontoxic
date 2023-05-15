@@ -16,7 +16,7 @@ export const Feature = (props: FeatureProps) => {
             <Box color={mode("red.800", "red.600")} fontSize="5xl">
                 {icon}
             </Box>
-            <Stack mt="6">
+            <Stack mt={{ base: "2", sm: "6" }}>
                 <Text as="h3" color={mode("red.500", "red.300")} fontSize="xl" fontWeight="extrabold">
                     {title}
                 </Text>

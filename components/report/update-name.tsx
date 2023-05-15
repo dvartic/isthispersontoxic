@@ -1,5 +1,5 @@
 import { AddIcon } from "@chakra-ui/icons";
-import { Button, HStack, Input, InputGroup, InputLeftElement, useToast } from "@chakra-ui/react";
+import { Button, HStack, Input, InputGroup, InputLeftElement, useMediaQuery, useToast } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface Props {
@@ -53,15 +53,18 @@ export function UpdateNameInput({ setHasNameBeenAdded, slug }: Props) {
         }
     }
 
+    // Input group size media query
+    const [isSmallerThan480] = useMediaQuery("(max-width: 480px)");
+
     return (
         <HStack>
-            <InputGroup>
+            <InputGroup size={isSmallerThan480 ? "sm" : "md"}>
                 <InputLeftElement pointerEvents="none">
                     <AddIcon />
                 </InputLeftElement>
                 <Input placeholder="Name" value={nameInput} onChange={(e) => setNameInput(e.target.value)} />
             </InputGroup>
-            <Button colorScheme="green" onClick={updateName}>
+            <Button colorScheme="green" onClick={updateName} size={isSmallerThan480 ? "sm" : "md"}>
                 Add
             </Button>
         </HStack>

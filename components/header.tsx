@@ -39,8 +39,7 @@ export function Header() {
                 mr="auto"
                 w={stdWidths.width}
                 maxW={stdWidths.maxWidth}
-                pt={6}
-                pb={6}
+                py={{ base: 3, sm: 6 }}
             >
                 <Link ml="auto" href="/" as={NextLink} _hover={hoverLogo()}>
                     <Heading as="h1" size="lg">

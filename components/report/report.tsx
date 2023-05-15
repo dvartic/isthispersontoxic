@@ -29,7 +29,7 @@ export function Report({ result, slug }: Props) {
     function getCommentComp() {
         if (name) {
             return (
-                <Text alignSelf="start" fontSize="2xl">
+                <Text alignSelf="start" fontSize={{ base: "xl", sm: "2xl" }}>
                     <Box as="i" fontWeight="bold">
                         {name}
                     </Box>
@@ -41,7 +41,7 @@ export function Report({ result, slug }: Props) {
             );
         } else {
             return (
-                <Text alignSelf="start" fontWeight="medium">
+                <Text alignSelf="start" fontWeight="medium" fontSize={{ base: "xl", sm: "2xl" }}>
                     The person made the following comment:
                 </Text>
             );
@@ -92,7 +92,14 @@ export function Report({ result, slug }: Props) {
     };
 
     return (
-        <VStack w={stdWidths.width} maxW={stdWidths.maxWidth} mx="auto" spacing={20} my={10} align="start">
+        <VStack
+            w={stdWidths.width}
+            maxW={stdWidths.maxWidth}
+            mx="auto"
+            spacing={{ base: 6, sm: 10 }}
+            my={{ base: 8, sm: 14 }}
+            align="start"
+        >
             {/* Update Name */}
             <Collapse in={name || hasNameBeenAdded ? false : true}>
                 <VStack align="start" w="100%">
@@ -103,7 +110,7 @@ export function Report({ result, slug }: Props) {
 
             {/* Main Report */}
             <VStack align="center" w="100%" p={10} bg={bg} borderRadius="md" spacing={8}>
-                <VStack w="100%" align="center">
+                <VStack w="100%" align="center" spacing={{ base: 5, sm: 0 }}>
                     <Text fontWeight="bold" alignSelf="start">
                         <Box as="span">isThis</Box>
                         <Box as="span" color={logoColorGreen}>
@@ -113,7 +120,7 @@ export function Report({ result, slug }: Props) {
                             Toxic
                         </Box>
                     </Text>
-                    <Heading as="h1" fontSize="5xl">
+                    <Heading as="h1" fontSize={{ base: "4xl", sm: "5xl" }}>
                         Toxicity Report
                     </Heading>
                 </VStack>
@@ -143,7 +150,7 @@ export function Report({ result, slug }: Props) {
                         >
                             “
                         </Text>
-                        <Text as="i" fontSize="lg">
+                        <Text as="i" fontSize={{ base: "md", sm: "lg" }}>
                             {result?.comment}
                         </Text>
                     </VStack>
@@ -152,7 +159,7 @@ export function Report({ result, slug }: Props) {
                 {/* Main report cards */}
                 <VStack align="center" w="100%" spacing={8}>
                     <Text
-                        fontSize="2xl"
+                        fontSize={{ base: "xl", sm: "2xl" }}
                         alignSelf="start"
                         as={motion.p}
                         variants={basicVariants}
@@ -167,7 +174,7 @@ export function Report({ result, slug }: Props) {
                     </Text>
 
                     {/* Statistic Cards */}
-                    <VStack spacing={12}>
+                    <VStack spacing={{ base: 6, sm: 12 }}>
                         <motion.div
                             variants={cardVariants}
                             initial="offscreen"

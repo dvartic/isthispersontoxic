@@ -22,6 +22,9 @@ import { featuresData } from "../definitions";
 export function FeaturesMain() {
     const [isSmallerThan768] = useMediaQuery("(max-width: 768px)");
 
+    // Media query for viewport scroll detection. Disable image animation on small height screens.
+    const [isHeightSmallerThan750] = useMediaQuery("(max-height: 750px)");
+
     function scrollToInput() {
         const target = document.getElementById("main-input");
         target?.scrollIntoView({ behavior: "smooth" });
@@ -95,7 +98,7 @@ export function FeaturesMain() {
         },
     };
     return (
-        <Box as="section" bg={mode("gray.50", "gray.900")} py="36">
+        <Box as="section" bg={mode("gray.50", "gray.900")} py={{ base: "16", sm: "36" }}>
             <Box maxW={{ base: "xl", md: "7xl" }} mx="auto" px={{ base: "6", md: "8" }}>
                 <Stack
                     spacing={{ base: "4", lg: "20" }}
@@ -104,7 +107,7 @@ export function FeaturesMain() {
                     variants={featuresMainVariants}
                     initial="offscreen"
                     whileInView="onscreen"
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ amount: isHeightSmallerThan750 ? 0.1 : 0.2 }}
                 >
                     <Center flex="1" shadow="lg" minH="26rem" maxW={{ lg: "xl" }} position="relative">
                         <NextImage src={trashImage} fill={true} alt="A pile of trash" style={{ objectFit: "cover" }} />
@@ -140,7 +143,7 @@ export function FeaturesMain() {
                     </Box>
                 </Stack>
                 <Divider
-                    my="20"
+                    my={{ base: "10", sm: "20" }}
                     ml="auto"
                     mr="auto"
                     opacity={1}
@@ -151,7 +154,7 @@ export function FeaturesMain() {
                     viewport={{ amount: "all" }}
                 />
                 {isSmallerThan768 ? (
-                    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: "12", md: "8" }}>
+                    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: "8", md: "10" }}>
                         {featuresData.map((feature, index) => {
                             return (
                                 <motion.div

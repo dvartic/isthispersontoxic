@@ -18,8 +18,8 @@ export function Banner() {
             maxW={stdWidths.maxWidth}
             ml="auto"
             mr="auto"
-            mt={20}
-            mb={16}
+            mt={{ base: 10, sm: 14, md: 20 }}
+            mb={{ base: 10, sm: 14, md: 20 }}
             pb={4}
             spacing={{ base: 16, sm: 20, md: 10, lg: 16 }}
             borderBottom="1px"
