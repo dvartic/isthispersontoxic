@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "../../../lib/prisma";
 import { getCustomError, parseJsonReq } from "../../../lib/api-utils";
+import { revalidatePath } from "next/cache";
 
 export async function POST(request: Request) {
     try {
@@ -19,6 +20,9 @@ export async function POST(request: Request) {
                 name: name,
             },
         });
+        // Revalidate route
+        const path = `/result/${slug}`;
+        revalidatePath(path);
         return NextResponse.json(updatedResult);
     } catch (err: any) {
         return NextResponse.json({ error: err.message }, { status: err.customCode ? err.customCode : 500 });

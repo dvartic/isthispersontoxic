@@ -3,11 +3,11 @@ import { Button, HStack, Input, InputGroup, InputLeftElement, useMediaQuery, use
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface Props {
-    setHasNameBeenAdded: Dispatch<SetStateAction<boolean>>;
+    setNameBeenAdded: Dispatch<SetStateAction<null | string>>;
     slug: string;
 }
 
-export function UpdateNameInput({ setHasNameBeenAdded, slug }: Props) {
+export function UpdateNameInput({ setNameBeenAdded, slug }: Props) {
     const [nameInput, setNameInput] = useState("");
 
     // Intialize Chakra toast
@@ -41,7 +41,7 @@ export function UpdateNameInput({ setHasNameBeenAdded, slug }: Props) {
             });
         } else {
             // Handle success
-            setHasNameBeenAdded(true);
+            setNameBeenAdded(nameInput);
             toast({
                 title: "Name Updated!",
                 id: "idSuccess",

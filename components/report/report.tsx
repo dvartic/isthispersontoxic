@@ -17,14 +17,16 @@ interface Props {
 }
 
 export function Report({ result, slug }: Props) {
-    const [hasNameBeenAdded, setHasNameBeenAdded] = useState(false);
+    const [nameBeenAdded, setNameBeenAdded] = useState<null | string>(null);
 
     const logoColorGreen = useColorModeValue("green.700", "green.500");
     const logoColorRed = useColorModeValue("red.700", "red.500");
     const bg = useColorModeValue("gray.100", "gray.800");
     const commentBg = useColorModeValue("white", "black");
 
-    const name = result?.name;
+    let name: null | string = null;
+    if (result?.name) name = result.name;
+    else if (nameBeenAdded) name = nameBeenAdded;
 
     function getCommentComp() {
         if (name) {
@@ -101,10 +103,10 @@ export function Report({ result, slug }: Props) {
             align="start"
         >
             {/* Update Name */}
-            <Collapse in={name || hasNameBeenAdded ? false : true}>
+            <Collapse in={name ? false : true}>
                 <VStack align="start" w="100%">
                     <Text fontWeight="bold">Add a name to be included in your report</Text>
-                    <UpdateNameInput setHasNameBeenAdded={setHasNameBeenAdded} slug={slug} />
+                    <UpdateNameInput setNameBeenAdded={setNameBeenAdded} slug={slug} />
                 </VStack>
             </Collapse>
 
