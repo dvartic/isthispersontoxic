@@ -21,8 +21,7 @@ export async function POST(request: Request) {
             },
         });
         // Revalidate route
-        const path = `/report/${slug}`;
-        revalidatePath(path);
+        revalidatePath("/report/[reportid]");
         return NextResponse.json(updatedResult);
     } catch (err: any) {
         return NextResponse.json({ error: err.message }, { status: err.customCode ? err.customCode : 500 });
