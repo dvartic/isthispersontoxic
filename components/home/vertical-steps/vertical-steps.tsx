@@ -11,7 +11,8 @@ import step2 from "/public/steps/2.png";
 import step3 from "/public/steps/3.png";
 import step4 from "/public/steps/4.png";
 import NextImage from "next/image";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
 export function VerticalSteps() {
     const { activeStep, setActiveStep } = useSteps({ initialStep: 0 });
@@ -36,6 +37,17 @@ export function VerticalSteps() {
             },
         },
     };
+
+    // Manual animation for steps image
+    const [scope, animate] = useAnimate();
+
+    useEffect(() => {
+        async function animateImage() {
+            await animate(scope.current, { opacity: 0 }, { duration: 0 });
+            await animate(scope.current, { opacity: 1 }, { duration: 1 });
+        }
+        animateImage();
+    }, [activeStep]);
 
     return (
         <Stack w="100%" spacing={4} direction={{ base: "column", sm: "column", md: "row" }} align="center">
@@ -96,21 +108,14 @@ export function VerticalSteps() {
                     placeholder="blur"
                 />
 
-                <Box
-                    w="100%"
-                    h="100%"
-                    position="relative"
-                    as={motion.div}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, scale: 1.1 }}
-                    key={activeStep}
-                >
+                <Box w="100%" h="100%" position="relative">
                     <NextImage
                         src={activeImage()}
                         alt="Steps Image"
                         fill={true}
                         style={{ zIndex: 1, objectFit: "contain" }}
                         placeholder="blur"
+                        ref={scope}
                     />
                 </Box>
             </Box>

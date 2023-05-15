@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://edepo-web.vercel.app/about-us</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app/report/efc43b8f-a1aa-4231-b4c4-f7072de5e40a</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app/report/4bfa1e41-0de2-4599-af12-0e97fd742f27</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app/report/eadb5c11-d5f2-41cd-8b1e-8aaccd0176f1</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app/report/707efcd7-4ba5-4fa4-ab4d-f06d6f99c5c9</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app/report/6b3c09fc-a747-4b24-95c7-290cd715c534</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://edepo-web.vercel.app/report/252b592d-234c-4b33-9613-97d03357655c</loc><lastmod>2023-05-12T14:55:27.898Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/about-us</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/cookies</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/privacy</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/terms</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/report/efc43b8f-a1aa-4231-b4c4-f7072de5e40a</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/report/4bfa1e41-0de2-4599-af12-0e97fd742f27</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/report/eadb5c11-d5f2-41cd-8b1e-8aaccd0176f1</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/report/707efcd7-4ba5-4fa4-ab4d-f06d6f99c5c9</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/report/6b3c09fc-a747-4b24-95c7-290cd715c534</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://edepo-web.vercel.app/report/252b592d-234c-4b33-9613-97d03357655c</loc><lastmod>2023-05-12T15:18:51.495Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
