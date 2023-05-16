@@ -1,6 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Providers } from "./providers";
 import { Header } from "@/components/header";
+import { Analytics } from "@vercel/analytics/react";
 
 // Metadata - replaces head.ts in Next 13.2
 export const metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Props) {
                 <Providers>
                     <Header />
                     {children}
+                    <Analytics />
                     <Footer />
                 </Providers>
             </body>
